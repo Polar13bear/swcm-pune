@@ -1,0 +1,35 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 3px); --radius-md: calc(var(--radius) - 1px); --radius-lg: var(--radius); --radius-xl: calc(var(--radius) + 3px);
+  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover); --color-popover-foreground: var(--popover-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground); --color-destructive: var(--destructive); --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring); --color-ring-offset-background: var(--background);
+  --color-success: var(--success); --color-success-foreground: var(--success-foreground); --color-warning: var(--warning); --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info); --color-info-foreground: var(--info-foreground); --color-sidebar: var(--sidebar); --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-active: var(--sidebar-active); --color-sidebar-muted: var(--sidebar-muted); --color-map: var(--map); --color-map-road: var(--map-road); --color-map-water: var(--map-water);
+  --color-chart-1: var(--chart-1); --color-chart-2: var(--chart-2); --color-chart-3: var(--chart-3); --color-chart-4: var(--chart-4); --color-chart-5: var(--chart-5);
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+:root {
+  --radius:.5rem; --background:oklch(.972 .006 145); --foreground:oklch(.235 .028 250); --card:oklch(1 0 0); --card-foreground:oklch(.235 .028 250);
+  --popover:oklch(1 0 0); --popover-foreground:oklch(.235 .028 250); --primary:oklch(.56 .145 151); --primary-foreground:oklch(.99 .002 145);
+  --secondary:oklch(.936 .016 150); --secondary-foreground:oklch(.32 .06 151); --muted:oklch(.945 .008 245); --muted-foreground:oklch(.52 .024 250);
+  --accent:oklch(.925 .028 148); --accent-foreground:oklch(.32 .07 151); --destructive:oklch(.58 .21 27); --destructive-foreground:oklch(.99 0 0);
+  --border:oklch(.89 .012 245); --input:oklch(.89 .012 245); --ring:oklch(.56 .145 151); --success:oklch(.59 .15 151); --success-foreground:oklch(.99 0 0);
+  --warning:oklch(.76 .15 75); --warning-foreground:oklch(.28 .05 55); --info:oklch(.59 .13 245); --info-foreground:oklch(.99 0 0);
+  --sidebar:oklch(.245 .037 251); --sidebar-foreground:oklch(.94 .008 240); --sidebar-active:oklch(.57 .15 151); --sidebar-muted:oklch(.66 .025 245);
+  --map:oklch(.925 .018 150); --map-road:oklch(.992 0 0); --map-water:oklch(.84 .055 230);
+  --chart-1:oklch(.58 .15 151); --chart-2:oklch(.61 .13 245); --chart-3:oklch(.77 .15 77); --chart-4:oklch(.62 .20 28); --chart-5:oklch(.55 .08 300);
+}
+*{border-color:var(--border)} html{font-family:var(--font-sans)} body{margin:0;background:var(--background);color:var(--foreground);font-feature-settings:"tnum" 1} button,a,input,select{letter-spacing:0}
+@keyframes live-pulse{0%,100%{box-shadow:0 0 0 0 color-mix(in oklab,var(--success) 45%,transparent)}50%{box-shadow:0 0 0 7px transparent}}
+@utility live-pulse{animation:live-pulse 1.8s ease-out infinite}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
